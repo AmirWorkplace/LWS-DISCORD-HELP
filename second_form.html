@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    .container {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+      height: auto;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+
+
+    .element {
+      display: flex;
+      width: auto;
+      height: auto;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 4px;
+      border: 4px solid rgb(0, 143, 112);
+    }
+
+    .element p {
+      margin: 0;
+      padding: 0;
+    }
+
+    #data {
+      max-width: 1100px;
+      padding: 20px;
+      height: auto;
+      align-items: center;
+      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border-radius: 8px;
+      border: 4px solid rgb(0, 143, 112);
+      margin-top: 20px;
+    }
+
+    .form {
+      width: 100%;
+      display: flex;
+      height: auto;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .form #form {
+      border-radius: 8px;
+      border: 4px solid rgb(0, 143, 112);
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form">
+    <form action="" id="form">
+      <div><label for="">Name : </label><input type="text" id="name" name="name"></div>
+      <div><label for="">E-mail : </label><input type="email" id="age" name="age"></div>
+      <div><label for="">Name : </label><input type="password" id="email" name="email"></div>
+      <button type="submit">submit</button>
+  </div>
+  </form>
+  <div class="container">
+    <div id="data"></div>
+  </div>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+  <script>
+    const randomId = () => {
+      const allChar = 'UVrstuvwxyzABCDEFGHIXYZbghijklmnopqJKLMNOPQRSTW0123456789cdef';
+      let uniqueId = '';
+
+      for (var i = 0; i < 10; i++) {
+        uniqueId += allChar[Math.floor(Math.random() * 50 + 1)];
+      }
+
+      return uniqueId;
+    }
+
+    let initialState = [], id = 1
+
+    $('#form').submit((e) => {
+      e.preventDefault();
+      const formvalue = $('#form').serializeArray();
+      const data = formvalue.reduce((acc, curr) => {
+        acc[curr.name] = curr.value;
+        return acc;
+      }, {});
+
+      initialState.push(data);
+
+      const state = initialState;
+
+      let n = state.length - Math.max(0, state.length - $('#form')[0].checkValidity());
+
+      state.slice(-n).map((item) => (
+        $('#data').append(
+          `<div class="element">
+            <p><strong>ID :</strong> ${id} </p>
+            <p><strong>Unique ID :</strong> ${randomId()} </p>
+            <p><strong>Name :</strong> ${item.name} </p>
+            <p><strong>Age :</strong> ${item.age} </p>
+            <p><strong>E-mail :</strong> ${item.email} </p>
+          </div>`
+        )
+      ))
+
+      id++
+    });
+
+  </script>
+</body>
+
+</html>
