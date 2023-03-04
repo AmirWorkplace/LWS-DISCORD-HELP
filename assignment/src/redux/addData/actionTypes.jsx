@@ -1,0 +1,7 @@
+export const ADD_DATA = "data/ADD_DATA"
+export const EDIT_DATA = "data/EDIT_DATA"
+export const FILTER_DATA = "data/FILTER_DATA"
+export const DELETE_DATA = "data/DELETE_DATA"
+export const INCREASE_DATA = "data/INCREASE_DATA"
+export const DECREASE_DATA = "data/DECREASE_DATA"
+export const DECREMENT_DATA = "data/DECREMENT_DATA"
