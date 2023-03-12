@@ -50,6 +50,12 @@ export const decrementData = (data) => {
     payload: data,
   }
 }
+/* export const increaseQtyData = (data) => {
+  return {
+    type: INCREMENT_QTY_DATA,
+    payload: data,
+  }
+} */
 export const decreaseQtyData = (data) => {
   return {
     type: DECREASE_DATA,

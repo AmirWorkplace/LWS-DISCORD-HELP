@@ -41,7 +41,7 @@ export const reducer = (state = initialState, action) => {
     case DECREASE_DATA:
       return state.map((product) => {
         if (product.id === action.payload.id) {
-          return { ...product, qty: product.qty - 1 }
+          return { ...product, qty: parseInt(product.qty) + 1 }
         } else return product
       })
 
