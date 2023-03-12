@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Annie+Use+Your+Telescope&family=Bebas+Neue&family=Blaka&family=Blaka+Hollow&family=Bungee&family=Codystar:wght@300&family=Dancing+Script&family=Diplomata+SC&family=Dynalight&family=Eater&family=Fascinate&family=Faster+One&family=Frijole&family=IBM+Plex+Mono:wght@100;200;300;700&family=IM+Fell+English+SC&family=Irish+Grover&family=Julius+Sans+One&family=Kdam+Thmor+Pro&family=League+Gothic&family=Macondo&family=Monofett&family=Monoton&family=Mr+Dafoe&family=Notable&family=Pacifico&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Potta+One&family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,400;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&family=Rubik+Mono+One&family=Rubik+Moonrocks&family=Rubik+Puddles&family=Russo+One&family=Sigmar+One&family=Stint+Ultra+Condensed&family=Tangerine&family=Ultra&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+textarea,
+input {
+}
+
+.testing-form {
+  @apply max-w-3xl w-full h-auto flex flex-col items-center justify-center p-5 m-4 border-[0.3px] border-slate-400 shadow-[1px_5px_20px_10px_rgba(0,0,0,0.1)] rounded-xl;
+}
+
+.testing-form label {
+  @apply w-full h-auto flex items-center justify-between;
+}
+
+.testing-form label span {
+  @apply text-[16px] font-semibold capitalize;
+}
+
+.testing-form label textarea,
+.testing-form label select,
+.testing-form label input {
+  @apply m-2 border-[0.1px] border-slate-400 shadow-[1px_5px_20px_10px_rgba(0,0,0,0.1)] p-1 px-3 bg-slate-200 w-96 rounded-md font-[500] outline-none focus:border-4 focus:border-red-200;
+}
+
+.testing-form label input[type='radio'],
+.testing-form label input[type='checkbox'] {
+  @apply w-5 h-5;
+}
+
+.testing-form div {
+  @apply w-full h-auto mt-3 mx-3 flex items-center justify-center;
+}
+
+.testing-form div button {
+  transition: 0.5s;
+}
+
+.testing-form div button {
+  @apply font-bold bg-green-500 rounded-md border-[0.5px] border-cyan-700 shadow-[1px_5px_20px_10px_rgba(0,0,0,0.1)] text-lg tracking-normal w-full flex items-center justify-center uppercase text-slate-100 duration-700 hover:tracking-wider hover:bg-cyan-500 hover:text-slate-900;
+}
